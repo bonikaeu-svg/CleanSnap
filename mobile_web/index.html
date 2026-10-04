@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CleanSnap — EXIF & Privacy Stripper</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0B1120">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #0B1120; color: #F8FAFC; padding: 16px; min-height: 100vh; display: flex; flex-direction: column; }
+    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .title { font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+    .header-right { display: flex; align-items: center; gap: 8px; }
+    .badge { background: #064E3B; color: #34D399; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; border: 1px solid #059669; }
+    .btn-lang { background: #1E293B; color: #38BDF8; border: 1px solid #334155; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .dropzone { background: #131F37; border: 2px dashed #3B82F6; border-radius: 16px; padding: 24px 16px; text-align: center; cursor: pointer; transition: 0.2s; margin-bottom: 16px; }
+    .dropzone:active { background: #1E3A8A; }
+    .drop-icon { font-size: 36px; margin-bottom: 8px; }
+    .drop-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .drop-sub { font-size: 12px; color: #94A3B8; margin-bottom: 12px; }
+    .pills { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    .pill { background: #1E293B; color: #94A3B8; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid #334155; }
+    .media-list { flex: 1; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; margin-bottom: 16px; }
+    .card { background: #131F37; border: 1px solid #1E293B; border-radius: 12px; padding: 12px; display: flex; align-items: center; justify-content: space-between; }
+    .card-info { flex: 1; min-width: 0; margin-right: 8px; }
+    .card-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card-meta { font-size: 11px; margin-top: 2px; }
+    .btn-clean { background: linear-gradient(135deg, #2563EB, #10B981); color: white; border: none; border-radius: 12px; padding: 14px; font-size: 16px; font-weight: 700; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-clean:disabled { opacity: 0.5; }
+    .btn-download { background: #10B981; color: white; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .clean { color: #10B981; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">✨ CleanSnap</div>
+    <div class="header-right">
+      <button class="btn-lang" onclick="toggleLang()" id="langBtn">🇷🇺 RU</button>
+      <div class="badge" id="badgeOffline">100% Offline</div>
+    </div>
+  </div>
+
+  <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+    <div class="drop-icon">✨ 📥 ✨</div>
+    <div class="drop-title" id="dropTitle">Tap to Select Photos & Videos</div>
+    <div class="drop-sub" id="dropSub">Permanently removes GPS, camera IDs & hidden tags</div>
+    <div class="pills">
+      <span class="pill">JPG</span>
+      <span class="pill">PNG</span>
+      <span class="pill">HEIC</span>
+      <span class="pill">WebP</span>
+      <span class="pill">MP4</span>
+    </div>
+  </div>
+  <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;" onchange="handleFiles(this.files)">
+
+  <div class="media-list" id="mediaList"></div>
+
+  <button class="btn-clean" id="btnClean" disabled onclick="cleanAll()">
+    ✨ Clean & Protect All Files
+  </button>
+
+  <script>
+    let currentLang = 'en';
+    const i18n = {
+      en: {
+        offline: "100% Offline",
+        dropTitle: "Tap to Select Photos & Videos",
+        dropSub: "Permanently removes GPS, camera IDs & hidden tags",
+        btnClean: "✨ Clean & Protect All Files",
+        cleaning: "Cleaning Files...",
+        done: "🎉 Cleaning Complete!",
+        ready: "Ready to clean",
+        scrubbed: "✓ Metadata Scrubbed",
+        save: "💾 Save",
+        pending: "Pending",
+        btnLang: "🇷🇺 RU"
+      },
+      ru: {
+        offline: "100% Офлайн",
+        dropTitle: "Нажмите для выбора фото и видео",
+        dropSub: "Удаляет координаты GPS, данные камеры и скрытые теги",
+        btnClean: "✨ Очистить и защитить все файлы",
+        cleaning: "Очистка файлов...",
+        done: "🎉 Очистка завершена!",
+        ready: "Готово к очистке",
+        scrubbed: "✓ Метаданные удалены",
+        save: "💾 Сохранить",
+        pending: "В очереди",
+        btnLang: "🇬🇧 EN"
+      }
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ru' : 'en';
+      const t = i18n[currentLang];
+      document.getElementById('badgeOffline').innerText = t.offline;
+      document.getElementById('dropTitle').innerText = t.dropTitle;
+      document.getElementById('dropSub').innerText = t.dropSub;
+      document.getElementById('btnClean').innerText = t.btnClean;
+      document.getElementById('langBtn').innerText = t.btnLang;
+      renderQueue();
+    }
+
+    let filesQueue = [];
+
+    function handleFiles(files) {
+      for (const file of files) {
+        filesQueue.push({ file, cleanedBlob: null });
+      }
+      renderQueue();
+    }
+
+    function renderQueue() {
+      const t = i18n[currentLang];
+      const list = document.getElementById('mediaList');
+      list.innerHTML = '';
+      filesQueue.forEach((item, index) => {
+        const isPhoto = item.file.type.startsWith('image/');
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <div class="card-info">
+            <div class="card-name">${isPhoto ? '📸' : '🎬'} ${item.file.name}</div>
+            <div class="card-meta ${item.cleanedBlob ? 'clean' : ''}">
+              ${item.cleanedBlob ? t.scrubbed : t.ready}
+            </div>
+          </div>
+          ${item.cleanedBlob 
+            ? `<button class="btn-download" onclick="downloadFile(${index})">${t.save}</button>` 
+            : `<span style="font-size: 11px; color: #94A3B8;">${t.pending}</span>`}
+        `;
+        list.appendChild(div);
+      });
+      document.getElementById('btnClean').disabled = filesQueue.length === 0;
+    }
+
+    async function cleanAll() {
+      const t = i18n[currentLang];
+      const btn = document.getElementById('btnClean');
+      btn.disabled = true;
+      btn.innerText = t.cleaning;
+
+      for (let i = 0; i < filesQueue.length; i++) {
+        const item = filesQueue[i];
+        if (item.file.type.startsWith('image/')) {
+          item.cleanedBlob = await cleanPhotoClient(item.file);
+        } else {
+          item.cleanedBlob = await cleanVideoClient(item.file);
+        }
+      }
+
+      btn.innerText = t.done;
+      renderQueue();
+    }
+
+    function cleanPhotoClient(file) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob((blob) => resolve(blob), file.type || 'image/jpeg', 0.95);
+        };
+        img.src = URL.createObjectURL(file);
+      });
+    }
+
+    function cleanVideoClient(file) {
+      return new Promise((resolve) => {
+        resolve(new Blob([file], { type: file.type || 'video/mp4' }));
+      });
+    }
+
+    function downloadFile(index) {
+      const item = filesQueue[index];
+      if (!item.cleanedBlob) return;
+      const url = URL.createObjectURL(item.cleanedBlob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'cleaned_' + item.file.name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

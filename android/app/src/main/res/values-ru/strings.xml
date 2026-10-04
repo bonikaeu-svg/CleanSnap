@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CleanSnap</string>
+    <string name="app_tagline">Очистка EXIF и приватных метаданных</string>
+    <string name="subtitle">Удаляйте GPS-координаты, серийные номера камер и скрытые теги с ваших фото и видео.</string>
+    <string name="offline_badge">100% Офлайн</string>
+    <string name="clear_queue">Очистить список</string>
+    <string name="pick_title">Нажмите, чтобы выбрать фото и видео</string>
+    <string name="pick_subtitle">Или отправьте файлы напрямую из Галереи</string>
+    <string name="queued_stats">В очереди: %1$d (%2$d фото, %3$d видео)</string>
+    <string name="gps_alert">📍 %1$d с геопозицией</string>
+    <string name="btn_clean_idle">✨ Очистить и защитить все файлы</string>
+    <string name="btn_clean_processing">Удаление метаданных…</string>
+    <string name="status_ready">Готово</string>
+    <string name="status_cleaning">Очистка…</string>
+    <string name="status_cleaned">Безопасно</string>
+    <string name="status_error">Ошибка</string>
+    <string name="btn_inspect">🔍 Данные</string>
+    <string name="completion_title">🎉 Очистка завершена!</string>
+    <string name="completion_body">Успешно очищено файлов: %1$d!\n\nВсе координаты GPS, серийные номера устройств и скрытые теги удалены навсегда.\n\nФайлы сохранены в папки «Pictures» и «Movies» в альбом «Cleaned_Media».</string>
+    <string name="btn_done">Готово</string>
+    <string name="dialog_inspect_title">🔍 Проверка метаданных</string>
+    <string name="warning_gps">⚠️ Обнаружена точная геопозиция (GPS)</string>
+    <string name="btn_view_maps">📍 Показать на Google Картах</string>
+    <string name="label_device">Устройство / Камера</string>
+    <string name="label_datetime">Дата и время съёмки</string>
+    <string name="label_clean">Чисто / Метаданные не найдены</string>
+    <string name="label_raw_tags">Найдено скрытых тегов (%1$d):</string>
+</resources>

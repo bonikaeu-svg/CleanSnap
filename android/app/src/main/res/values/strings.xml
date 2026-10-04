@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CleanSnap</string>
+    <string name="app_tagline">EXIF &amp; Privacy Metadata Stripper</string>
+    <string name="subtitle">Permanently scrub GPS coordinates, camera serials, and private tags from your photos &amp; videos.</string>
+    <string name="offline_badge">100% Offline</string>
+    <string name="clear_queue">Clear</string>
+    <string name="pick_title">Tap to Select Photos &amp; Videos</string>
+    <string name="pick_subtitle">Or share files directly from your Gallery app</string>
+    <string name="queued_stats">Queued: %1$d (%2$d photos, %3$d videos)</string>
+    <string name="gps_alert">📍 %1$d with GPS</string>
+    <string name="btn_clean_idle">✨ Clean &amp; Protect All Files</string>
+    <string name="btn_clean_processing">Scrubbing Metadata…</string>
+    <string name="status_ready">Ready</string>
+    <string name="status_cleaning">Cleaning…</string>
+    <string name="status_cleaned">Safe</string>
+    <string name="status_error">Error</string>
+    <string name="btn_inspect">🔍 Inspect</string>
+    <string name="completion_title">🎉 Cleaning Complete!</string>
+    <string name="completion_body">Successfully cleaned %1$d files!\n\nAll GPS coordinates, camera serials, and hidden tags have been permanently scrubbed.\n\nSaved to your device\'s Pictures and Movies under Cleaned_Media.</string>
+    <string name="btn_done">Done</string>
+    <string name="dialog_inspect_title">🔍 Metadata Inspection</string>
+    <string name="warning_gps">⚠️ Exposed GPS Coordinates</string>
+    <string name="btn_view_maps">📍 View on Google Maps</string>
+    <string name="label_device">Device / Camera</string>
+    <string name="label_datetime">Date &amp; Time Captured</string>
+    <string name="label_clean">Clean / No EXIF detected</string>
+    <string name="label_raw_tags">Raw Tags Found (%1$d):</string>
+</resources>

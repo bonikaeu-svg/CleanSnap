@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+dist/
+build/
+venv/
+.env
+
+# Android & Gradle
+android/.gradle/
+android/.idea/
+android/local.properties
+android/build/
+android/app/build/
+*.hprof
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Keep precompiled release binaries for easy distribution if desired,
+# or exclude them if preferred. (Large binaries >100MB like CleanSnap.exe should be uploaded to GitHub Releases)
+CleanSnap.exe
