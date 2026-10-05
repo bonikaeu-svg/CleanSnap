@@ -73,8 +73,8 @@ class DropArea(QFrame):
         for fmt in formats:
             pill = QLabel(fmt)
             pill.setStyleSheet(
-                "background-color: #1E293B; color: #94A3B8; border: 1px solid #334155; "
-                "border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 600;"
+                "background-color: #1E293B; color: #CBD5E1; border: 1px solid #334155; "
+                "border-radius: 6px; padding: 4px 10px; font-size: 13px; font-weight: 700;"
             )
             pills_layout.addWidget(pill)
         layout.addLayout(pills_layout)

@@ -1,5 +1,6 @@
 """
 Friendly Modern Dark Theme Stylesheet for CleanSnap / EXIF & Metadata Stripper.
+Optimized with large, highly legible typography for Windows desktop screens.
 """
 
 DARK_THEME_QSS = """
@@ -7,8 +8,8 @@ DARK_THEME_QSS = """
 QWidget {
     background-color: #0B1120;
     color: #F8FAFC;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
 }
 
 /* Header Card */
@@ -16,22 +17,22 @@ QFrame#HeaderCard {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #1E293B, stop:1 #0F172A);
     border-radius: 14px;
     border: 1px solid #334155;
-    padding: 10px 14px;
+    padding: 12px 16px;
 }
 
 QLabel#AppTitle {
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 800;
     color: #F8FAFC;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
 }
 
 QLabel#AppSubtitle {
-    font-size: 13px;
+    font-size: 14px;
     color: #94A3B8;
 }
 
-/* Drop Area */
+/* Drop Area (Central Window) */
 QFrame#DropArea {
     background-color: #111E36;
     border: 2px dashed #3B82F6;
@@ -50,17 +51,17 @@ QFrame#DropArea[dragActive="true"] {
 }
 
 QLabel#DropIcon {
-    font-size: 42px;
+    font-size: 46px;
 }
 
 QLabel#DropTitle {
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 21px;
+    font-weight: 800;
     color: #F1F5F9;
 }
 
 QLabel#DropSubtitle {
-    font-size: 12px;
+    font-size: 14px;
     color: #94A3B8;
 }
 
@@ -77,9 +78,9 @@ QPushButton {
     color: #F8FAFC;
     border: 1px solid #334155;
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 9px 18px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 QPushButton:hover {
@@ -102,9 +103,9 @@ QPushButton#PrimaryButton {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2563EB, stop:1 #10B981);
     border: none;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 10px;
 }
 
@@ -127,6 +128,9 @@ QPushButton#SecondaryButton {
     background-color: #1E293B;
     border: 1px solid #3B82F6;
     color: #93C5FD;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 18px;
 }
 
 QPushButton#SecondaryButton:hover {
@@ -139,9 +143,10 @@ QPushButton#CancelButton {
     background-color: #7F1D1D;
     border: 1px solid #DC2626;
     color: #FEE2E2;
-    padding: 10px 20px;
+    padding: 11px 22px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 QPushButton#CancelButton:hover {
@@ -155,7 +160,7 @@ QLineEdit {
     border-radius: 8px;
     padding: 8px 12px;
     color: #F8FAFC;
-    font-size: 13px;
+    font-size: 14px;
     selection-background-color: #2563EB;
 }
 
@@ -171,22 +176,23 @@ QTableWidget {
     gridline-color: #1E293B;
     selection-background-color: #1E3A8A;
     selection-color: #FFFFFF;
+    font-size: 14px;
 }
 
 QHeaderView::section {
     background-color: #0B1120;
     color: #94A3B8;
-    padding: 9px 12px;
+    padding: 10px 14px;
     border: none;
     border-bottom: 1px solid #1E293B;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 QTableWidget::item {
-    padding: 8px 6px;
+    padding: 10px 8px;
     border-bottom: 1px solid #141F36;
 }
 
@@ -202,7 +208,7 @@ QProgressBar {
     text-align: center;
     color: #F8FAFC;
     font-weight: 600;
-    height: 20px;
+    height: 22px;
 }
 
 QProgressBar::chunk {
@@ -212,14 +218,14 @@ QProgressBar::chunk {
 
 /* Checkboxes */
 QCheckBox {
-    spacing: 8px;
+    spacing: 10px;
     color: #E2E8F0;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 QCheckBox::indicator {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid #475569;
     background-color: #0B1120;
@@ -237,15 +243,15 @@ QCheckBox::indicator:hover {
 /* Scrollbars */
 QScrollBar:vertical {
     background: #0B1120;
-    width: 10px;
+    width: 12px;
     margin: 0px;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 QScrollBar::handle:vertical {
     background: #334155;
-    min-height: 24px;
-    border-radius: 5px;
+    min-height: 28px;
+    border-radius: 6px;
 }
 
 QScrollBar::handle:vertical:hover {
@@ -258,25 +264,43 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
 
 QScrollBar:horizontal {
     background: #0B1120;
-    height: 10px;
+    height: 12px;
     margin: 0px;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 QScrollBar::handle:horizontal {
     background: #334155;
-    min-width: 24px;
-    border-radius: 5px;
+    min-width: 28px;
+    border-radius: 6px;
 }
 
-/* Log Box */
+QScrollBar::handle:horizontal:hover {
+    background: #475569;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* Activity Log Console */
 QPlainTextEdit {
-    background-color: #080D1A;
+    background-color: #070D18;
+    color: #94A3B8;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 13px;
     border: 1px solid #1E293B;
     border-radius: 8px;
-    color: #94A3B8;
-    font-family: "Consolas", "Cascadia Code", monospace;
-    font-size: 12px;
     padding: 8px;
+}
+
+/* Tooltips */
+QToolTip {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
 }
 """

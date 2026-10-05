@@ -11,7 +11,7 @@ if PROJECT_ROOT not in sys.path:
 
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QFont
 from ui.main_window import MainWindow
 
 
@@ -23,6 +23,7 @@ def main():
         QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
 
     app = QApplication(sys.argv)
+    app.setFont(QFont("Segoe UI", 10))
     app.setApplicationName("CleanSnap")
     app.setOrganizationName("PrivacyTools")
 

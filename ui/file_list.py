@@ -32,8 +32,9 @@ class FileTableWidget(QTableWidget):
         header.setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
         header.setSectionResizeMode(5, QHeaderView.ResizeMode.ResizeToContents)
 
-        self.setColumnWidth(1, 220)
+        self.setColumnWidth(1, 240)
         self.verticalHeader().setVisible(False)
+        self.verticalHeader().setDefaultSectionSize(38)
         self.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.setSelectionMode(QTableWidget.SelectionMode.ExtendedSelection)
         self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
