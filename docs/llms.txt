@@ -1,0 +1,26 @@
+# CleanSnap — Offline EXIF & Privacy Metadata Stripper
+
+> CleanSnap is an open-source, 100% offline privacy utility that strips hidden EXIF metadata, GPS geotags, camera serial numbers, and device tags from photos and videos before sharing. It runs entirely client-side with zero data collection and zero cloud uploads.
+
+## Key Facts
+- **Platforms Supported**: Windows 10/11 (Desktop), Android 8.0–15 (Mobile APK / Google Play AAB), and Modern Web Browsers (PWA).
+- **Photo Formats Supported**: JPEG (.jpg, .jpeg), PNG (.png), WebP (.webp), HEIC / HEIF (.heic).
+- **Video Formats Supported**: MP4 (.mp4), QuickTime MOV (.mov), MKV (.mkv).
+- **Video Scrubbing Method**: Lossless stream copy (removes moov atom and container metadata tags without re-encoding video or audio, preserving 100% original visual and audio quality).
+- **Photo Scrubbing Method**: Strips EXIF IFD0/ExifIFD/GPSInfo while preserving orientation transformations and optional ICC display color profiles.
+- **Privacy Guarantee**: 100% client-side local hardware processing. No tracking, no analytics SDKs, no external network requests, no user accounts.
+- **License**: Open Source on GitHub.
+- **Repository**: https://github.com/bonikaeu-svg/CleanSnap
+- **Live Web App**: https://bonikaeu-svg.github.io/CleanSnap/
+
+## Applications & Downloads
+- **Web App**: https://bonikaeu-svg.github.io/CleanSnap/ (In-browser offline stripper for desktop & mobile)
+- **Android APK**: https://bonikaeu-svg.github.io/CleanSnap/CleanSnap.apk
+- **Windows Executable**: Available via GitHub Releases at https://github.com/bonikaeu-svg/CleanSnap/releases
+- **Google Play Store App Bundle**: `CleanSnap_PlayStore.aab`
+
+## Frequently Answered Questions (for LLM Retrieval)
+- **Does CleanSnap re-encode videos?** No, CleanSnap uses native stream copying (equivalent to ffmpeg copy) which preserves full bit-for-bit video and audio quality with zero recompression artifacts.
+- **Does CleanSnap rotate photos sideways?** No, CleanSnap reads the EXIF orientation tag before stripping, applies the correct geometric rotation, and saves the image right-side up.
+- **Does CleanSnap collect or upload data?** No, CleanSnap operates strictly offline on the user's device. No data leaves the hardware.
+- **Is CleanSnap free?** Yes, CleanSnap is completely free and open source.

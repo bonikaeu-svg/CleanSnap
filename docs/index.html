@@ -3,44 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CleanSnap — EXIF & Privacy Stripper</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <title>CleanSnap — 100% Offline EXIF & Metadata Stripper | Photo & Video Privacy</title>
+  <meta name="title" content="CleanSnap — 100% Offline EXIF & Metadata Stripper | Photo & Video Privacy">
+  <meta name="description" content="Free open-source EXIF metadata stripper and GPS scrubber for photos (JPEG, PNG, HEIC, WebP) and videos (MP4, MOV). 100% offline client-side processing, zero tracking, zero quality loss. Available for Windows, Android, and Web.">
+  <meta name="keywords" content="EXIF remover, strip metadata, remove GPS from photo, metadata scrubber, video metadata cleaner, remove location from picture, privacy photo tool, offline EXIF stripper, CleanSnap, Android APK, Windows EXIF cleaner">
+  <meta name="author" content="CleanSnap Open Source">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://bonikaeu-svg.github.io/CleanSnap/">
   <link rel="icon" type="image/png" href="app_icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0B1120">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bonikaeu-svg.github.io/CleanSnap/">
+  <meta property="og:title" content="CleanSnap — 100% Offline EXIF & Metadata Stripper">
+  <meta property="og:description" content="Safely remove GPS coordinates, camera serials, and personal metadata from photos and videos. 100% offline and private.">
+  <meta property="og:image" content="https://bonikaeu-svg.github.io/CleanSnap/playstore_feature_graphic_1024x500.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bonikaeu-svg.github.io/CleanSnap/">
+  <meta name="twitter:title" content="CleanSnap — Offline EXIF & Privacy Stripper">
+  <meta name="twitter:description" content="Free client-side EXIF & video metadata scrubber. Permanently removes GPS geotags without recompression.">
+  <meta name="twitter:image" content="https://bonikaeu-svg.github.io/CleanSnap/playstore_feature_graphic_1024x500.png">
+
+  <!-- JSON-LD Structured Data for AI & Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://bonikaeu-svg.github.io/CleanSnap/#software",
+        "name": "CleanSnap",
+        "operatingSystem": "Windows 10, Windows 11, Android 8.0+, Web Browser",
+        "applicationCategory": "SecurityApplication, MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "CleanSnap is a 100% offline privacy tool designed to permanently strip EXIF metadata, GPS geotags, camera serial numbers, and device information from photos and videos.",
+        "image": "https://bonikaeu-svg.github.io/CleanSnap/playstore_feature_graphic_1024x500.png",
+        "downloadUrl": "https://bonikaeu-svg.github.io/CleanSnap/CleanSnap.apk",
+        "featureList": [
+          "Permanent GPS location and coordinate removal",
+          "Lossless video container stream copying (zero re-encoding)",
+          "Orientation-preserving photo metadata stripping",
+          "Support for JPG, PNG, WebP, HEIC, MP4, MOV, and MKV",
+          "100% offline local device processing with zero data collection"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://bonikaeu-svg.github.io/CleanSnap/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I remove GPS location and EXIF metadata from photos without uploading them?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CleanSnap runs 100% locally in your web browser, on Android, or on Windows. Simply select or drop your photos into CleanSnap, and it removes all GPS coordinates, camera models, and timestamps using local hardware. No files are ever sent to a remote server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CleanSnap reduce video quality when stripping metadata?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. CleanSnap utilizes native stream copying (lossless container cleaning). It wipes metadata atoms (like moov and creation tags) without re-encoding video or audio frames, preserving 100% bit-for-bit original quality."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which file formats are supported by CleanSnap?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CleanSnap supports JPEG (.jpg, .jpeg), PNG (.png), WebP (.webp), Apple HEIC/HEIF (.heic), MP4 (.mp4), QuickTime MOV (.mov), and MKV (.mkv)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CleanSnap free and open source?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, CleanSnap is completely free, contains no ads, collects no user data, and the full source code is publicly accessible on GitHub."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Strip EXIF Metadata and GPS Geotags Using CleanSnap",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Select Media",
+            "text": "Drag and drop or tap the picker to select photos or videos."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Scrub Metadata",
+            "text": "Click 'Clean & Protect All Files' to strip GPS, camera identifiers, and hidden tags locally."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Save Clean Media",
+            "text": "Save the scrubbed files safely to your device before sharing online."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #0B1120; color: #F8FAFC; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-    .container { max-width: 640px; width: 100%; display: flex; flex-direction: column; gap: 16px; }
+    .container { max-width: 680px; width: 100%; display: flex; flex-direction: column; gap: 16px; }
     .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; }
-    .title { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-    .title img { width: 32px; height: 32px; border-radius: 8px; }
+    .title { font-size: 24px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .title img { width: 36px; height: 36px; border-radius: 8px; }
     .header-right { display: flex; align-items: center; gap: 8px; }
-    .badge { background: #064E3B; color: #34D399; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; border: 1px solid #059669; }
-    .btn-lang { background: #1E293B; color: #38BDF8; border: 1px solid #334155; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; }
-    .hero-banner { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1E293B; margin-bottom: 4px; }
+    .badge { background: #064E3B; color: #34D399; font-size: 11px; font-weight: 700; padding: 5px 10px; border-radius: 6px; border: 1px solid #059669; }
+    .btn-lang { background: #1E293B; color: #38BDF8; border: 1px solid #334155; padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .hero-banner { width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid #1E293B; }
     .hero-banner img { width: 100%; height: auto; display: block; }
     
+    .intro-box { background: #111C33; border: 1px solid #1E293B; border-radius: 12px; padding: 14px 16px; font-size: 13px; line-height: 1.5; color: #CBD5E1; }
+    .intro-box strong { color: #F8FAFC; }
+
     .dropzone { background: #131F37; border: 2px dashed #3B82F6; border-radius: 16px; padding: 28px 16px; text-align: center; cursor: pointer; transition: 0.2s; }
     .dropzone:hover { border-color: #60A5FA; background: #162444; }
     .dropzone:active { background: #1E3A8A; }
-    .drop-icon { font-size: 36px; margin-bottom: 8px; }
-    .drop-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-    .drop-sub { font-size: 12px; color: #94A3B8; margin-bottom: 12px; }
+    .drop-icon { font-size: 40px; margin-bottom: 8px; }
+    .drop-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .drop-sub { font-size: 13px; color: #94A3B8; margin-bottom: 12px; }
     .pills { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
-    .pill { background: #1E293B; color: #94A3B8; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid #334155; }
+    .pill { background: #1E293B; color: #CBD5E1; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 5px; border: 1px solid #334155; }
     
     .media-list { display: flex; flex-direction: column; gap: 8px; max-height: 280px; overflow-y: auto; }
     .card { background: #131F37; border: 1px solid #1E293B; border-radius: 12px; padding: 12px; display: flex; align-items: center; justify-content: space-between; }
     .card-info { flex: 1; min-width: 0; margin-right: 8px; }
     .card-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .card-meta { font-size: 11px; margin-top: 2px; }
+    .card-meta { font-size: 12px; margin-top: 2px; }
     
     .btn-clean { background: linear-gradient(135deg, #2563EB, #10B981); color: white; border: none; border-radius: 12px; padding: 14px; font-size: 16px; font-weight: 700; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
     .btn-clean:disabled { opacity: 0.5; cursor: not-allowed; }
     .btn-download { background: #10B981; color: white; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; }
     .clean { color: #10B981; font-weight: 600; }
 
-    .downloads-card { background: #111C33; border: 1px solid #1E293B; border-radius: 16px; padding: 18px; margin-top: 10px; }
+    .downloads-card { background: #111C33; border: 1px solid #1E293B; border-radius: 16px; padding: 18px; }
     .downloads-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
     .download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     @media (max-width: 480px) { .download-grid { grid-template-columns: 1fr; } }
@@ -48,53 +168,70 @@
     .dl-btn:hover { background: #23355B; border-color: #60A5FA; }
     .dl-icon { font-size: 24px; }
     .dl-text-title { font-size: 13px; font-weight: 700; }
-    .dl-text-sub { font-size: 10px; color: #94A3B8; }
+    .dl-text-sub { font-size: 11px; color: #94A3B8; }
 
-    .footer { text-align: center; font-size: 12px; color: #64748B; margin-top: 20px; padding-bottom: 20px; }
+    /* FAQ Accordion Section for AI Search Crawlers */
+    .faq-section { background: #111C33; border: 1px solid #1E293B; border-radius: 16px; padding: 18px; }
+    .faq-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+    details { border-bottom: 1px solid #1E293B; padding: 10px 0; }
+    details:last-child { border-bottom: none; }
+    summary { font-size: 13px; font-weight: 600; cursor: pointer; color: #E2E8F0; outline: none; }
+    summary:hover { color: #38BDF8; }
+    details p { font-size: 12px; color: #94A3B8; margin-top: 8px; line-height: 1.5; }
+
+    .footer { text-align: center; font-size: 12px; color: #64748B; margin-top: 10px; padding-bottom: 20px; }
     .footer a { color: #38BDF8; text-decoration: none; }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="header">
+    <header class="header">
       <div class="title">
-        <img src="app_icon.png" alt="CleanSnap">
+        <img src="app_icon.png" alt="CleanSnap Logo">
         <span>CleanSnap</span>
       </div>
       <div class="header-right">
-        <button class="btn-lang" onclick="toggleLang()" id="langBtn">🇷🇺 RU</button>
-        <div class="badge" id="badgeOffline">100% Offline</div>
+        <button class="btn-lang" onclick="toggleLang()" id="langBtn" aria-label="Toggle language">🇷🇺 RU</button>
+        <span class="badge" id="badgeOffline">100% Offline</span>
       </div>
-    </div>
+    </header>
 
     <div class="hero-banner">
-      <img src="playstore_feature_graphic_1024x500.png" alt="CleanSnap Features">
+      <img src="playstore_feature_graphic_1024x500.png" alt="CleanSnap — EXIF & Privacy Metadata Stripper">
     </div>
+
+    <!-- Clear, declarative definition sentence for Generative Search Overviews -->
+    <section class="intro-box" id="introBox">
+      <strong>CleanSnap</strong> is an open-source, 100% offline EXIF metadata stripper. It permanently removes GPS geotags, camera serials, timestamps, and hidden tracking identifiers from photos and videos entirely on your device with zero data collection.
+    </section>
 
     <!-- Web Stripper Dropzone -->
-    <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
-      <div class="drop-icon">✨ 📥 ✨</div>
-      <div class="drop-title" id="dropTitle">Tap to Clean Photos & Videos (In Browser)</div>
-      <div class="drop-sub" id="dropSub">Permanently removes GPS, camera IDs & hidden tags without uploading</div>
-      <div class="pills">
-        <span class="pill">JPG</span>
-        <span class="pill">PNG</span>
-        <span class="pill">HEIC</span>
-        <span class="pill">WebP</span>
-        <span class="pill">MP4</span>
+    <main>
+      <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()" role="button" tabindex="0">
+        <div class="drop-icon">✨ 📥 ✨</div>
+        <div class="drop-title" id="dropTitle">Tap to Clean Photos & Videos (In Browser)</div>
+        <div class="drop-sub" id="dropSub">Permanently removes GPS, camera IDs & hidden tags without uploading</div>
+        <div class="pills">
+          <span class="pill">JPG</span>
+          <span class="pill">PNG</span>
+          <span class="pill">HEIC</span>
+          <span class="pill">WebP</span>
+          <span class="pill">MP4</span>
+          <span class="pill">MOV</span>
+        </div>
       </div>
-    </div>
-    <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;" onchange="handleFiles(this.files)">
+      <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;" onchange="handleFiles(this.files)">
 
-    <div class="media-list" id="mediaList"></div>
+      <div class="media-list" id="mediaList"></div>
 
-    <button class="btn-clean" id="btnClean" disabled onclick="cleanAll()">
-      ✨ Clean & Protect All Files
-    </button>
+      <button class="btn-clean" id="btnClean" disabled onclick="cleanAll()">
+        ✨ Clean & Protect All Files
+      </button>
+    </main>
 
     <!-- Native App Downloads Section -->
-    <div class="downloads-card">
+    <section class="downloads-card">
       <div class="downloads-title" id="dlSectionTitle">📱 Install Standalone Native Apps</div>
       <div class="download-grid">
         <a class="dl-btn" href="CleanSnap.apk" download>
@@ -104,7 +241,7 @@
             <div class="dl-text-sub" id="dlApkSub">16.4 MB • Install on phone</div>
           </div>
         </a>
-        <a class="dl-btn" href="https://github.com/bonikaeu-svg/CleanSnap/releases" target="_blank">
+        <a class="dl-btn" href="https://github.com/bonikaeu-svg/CleanSnap/releases" target="_blank" rel="noopener">
           <span class="dl-icon">💻</span>
           <div>
             <div class="dl-text-title" id="dlWinTitle">Windows App (.exe)</div>
@@ -112,15 +249,42 @@
           </div>
         </a>
       </div>
-    </div>
+    </section>
 
-    <div class="footer">
+    <!-- Semantic FAQ Section for AI Search Engine Summaries (Perplexity, SearchGPT, Gemini) -->
+    <section class="faq-section" aria-label="Frequently Asked Questions">
+      <div class="faq-title" id="faqHeading">❓ Frequently Asked Questions (FAQ)</div>
+      
+      <details>
+        <summary id="q1">How does CleanSnap remove GPS and metadata offline?</summary>
+        <p id="a1">CleanSnap executes all parsing and scrubbing directly inside your device hardware via HTML5 Canvas (browser), Android MediaStore/MediaMuxer (mobile), or Python/FFmpeg (Windows). Files never touch an external server.</p>
+      </details>
+
+      <details>
+        <summary id="q2">Does video cleaning reduce visual or audio quality?</summary>
+        <p id="a2">No. CleanSnap performs lossless container stream copying (native stream copy). It strips the metadata atoms (such as moov and creation tags) without re-encoding the video or audio streams.</p>
+      </details>
+
+      <details>
+        <summary id="q3">What photo and video formats are supported?</summary>
+        <p id="a3">Photos: JPEG (.jpg, .jpeg), PNG (.png), WebP (.webp), and iPhone HEIC/HEIF (.heic). Videos: MP4 (.mp4), QuickTime MOV (.mov), and MKV (.mkv).</p>
+      </details>
+
+      <details>
+        <summary id="q4">Is my privacy protected?</summary>
+        <p id="a4">Yes, 100%. CleanSnap has zero tracking, zero telemetry, no advertisements, and zero cloud uploads. The full source code is publicly inspectable on GitHub.</p>
+      </details>
+    </section>
+
+    <footer class="footer">
       <p id="footerText">100% Client-Side Processing • Zero Tracking</p>
       <p style="margin-top: 4px;">
         <a href="privacy.html" id="linkPrivacy">Privacy Policy</a> • 
-        <a href="https://github.com/bonikaeu-svg/CleanSnap" target="_blank">GitHub Source</a>
+        <a href="llms.txt" target="_blank">llms.txt</a> • 
+        <a href="sitemap.xml" target="_blank">Sitemap</a> • 
+        <a href="https://github.com/bonikaeu-svg/CleanSnap" target="_blank" rel="noopener">GitHub Source</a>
       </p>
-    </div>
+    </footer>
   </div>
 
   <script>
@@ -128,6 +292,7 @@
     const i18n = {
       en: {
         offline: "100% Offline",
+        intro: "<strong>CleanSnap</strong> is an open-source, 100% offline EXIF metadata stripper. It permanently removes GPS geotags, camera serials, timestamps, and hidden tracking identifiers from photos and videos entirely on your device with zero data collection.",
         dropTitle: "Tap to Clean Photos & Videos (In Browser)",
         dropSub: "Permanently removes GPS, camera IDs & hidden tags without uploading",
         btnClean: "✨ Clean & Protect All Files",
@@ -142,12 +307,22 @@
         dlApkSub: "16.4 MB • Direct phone download",
         dlWinTitle: "Windows App (.exe)",
         dlWinSub: "GitHub Releases • Portable",
+        faqHeading: "❓ Frequently Asked Questions (FAQ)",
+        q1: "How does CleanSnap remove GPS and metadata offline?",
+        a1: "CleanSnap executes all parsing and scrubbing directly inside your device hardware via HTML5 Canvas (browser), Android MediaStore/MediaMuxer (mobile), or Python/FFmpeg (Windows). Files never touch an external server.",
+        q2: "Does video cleaning reduce visual or audio quality?",
+        a2: "No. CleanSnap performs lossless container stream copying (native stream copy). It strips the metadata atoms without re-encoding the video or audio streams.",
+        q3: "What photo and video formats are supported?",
+        a3: "Photos: JPEG (.jpg, .jpeg), PNG (.png), WebP (.webp), and iPhone HEIC/HEIF (.heic). Videos: MP4 (.mp4), QuickTime MOV (.mov), and MKV (.mkv).",
+        q4: "Is my privacy protected?",
+        a4: "Yes, 100%. CleanSnap has zero tracking, zero telemetry, no advertisements, and zero cloud uploads. The full source code is publicly inspectable on GitHub.",
         footerText: "100% Client-Side Processing • Zero Tracking",
         linkPrivacy: "Privacy Policy",
         btnLang: "🇷🇺 RU"
       },
       ru: {
         offline: "100% Офлайн",
+        intro: "<strong>CleanSnap</strong> — это бесплатный и 100% офлайн инструмент для очистки метаданных EXIF. Он навсегда удаляет GPS-координаты, данные камеры, серийные номера и скрытые теги с фото и видео прямо на вашем устройстве без отправки в сеть.",
         dropTitle: "Нажмите для очистки фото и видео прямо в браузере",
         dropSub: "Удаляет координаты GPS, данные камеры и скрытые теги без отправки на сервер",
         btnClean: "✨ Очистить и защитить все файлы",
@@ -162,6 +337,15 @@
         dlApkSub: "16.4 MB • Установка на телефон",
         dlWinTitle: "Приложение Windows (.exe)",
         dlWinSub: "GitHub Releases • Портативное",
+        faqHeading: "❓ Часто задаваемые вопросы (FAQ)",
+        q1: "Как CleanSnap удаляет геопозицию и метаданные офлайн?",
+        a1: "CleanSnap работает 100% локально на вашем процессоре: через Canvas в браузере, MediaMuxer на Android или через движок Windows. Ни один файл никуда не отправляется.",
+        q2: "Ухудшается ли качество видео при очистке?",
+        a2: "Нет. CleanSnap использует прямое копирование потоков (lossless stream copy). Оно вырезает метаданные без перекодирования картинки и звука — качество сохраняется на 100%.",
+        q3: "Какие форматы поддерживаются?",
+        a3: "Фото: JPEG (.jpg), PNG, WebP, iPhone HEIC/HEIF (.heic). Видео: MP4, QuickTime MOV, MKV.",
+        q4: "Защищена ли моя приватность?",
+        a4: "Да, абсолютно. В CleanSnap нет рекламы, нет аналитики и нет передачи файлов на сервер. Исходный код открыт на GitHub.",
         footerText: "100% локальная обработка на устройстве • Без сбора данных",
         linkPrivacy: "Политика конфиденциальности",
         btnLang: "🇬🇧 EN"
@@ -172,6 +356,7 @@
       currentLang = currentLang === 'en' ? 'ru' : 'en';
       const t = i18n[currentLang];
       document.getElementById('badgeOffline').innerText = t.offline;
+      document.getElementById('introBox').innerHTML = t.intro;
       document.getElementById('dropTitle').innerText = t.dropTitle;
       document.getElementById('dropSub').innerText = t.dropSub;
       document.getElementById('btnClean').innerText = t.btnClean;
@@ -180,6 +365,15 @@
       document.getElementById('dlApkSub').innerText = t.dlApkSub;
       document.getElementById('dlWinTitle').innerText = t.dlWinTitle;
       document.getElementById('dlWinSub').innerText = t.dlWinSub;
+      document.getElementById('faqHeading').innerText = t.faqHeading;
+      document.getElementById('q1').innerText = t.q1;
+      document.getElementById('a1').innerText = t.a1;
+      document.getElementById('q2').innerText = t.q2;
+      document.getElementById('a2').innerText = t.a2;
+      document.getElementById('q3').innerText = t.q3;
+      document.getElementById('a3').innerText = t.a3;
+      document.getElementById('q4').innerText = t.q4;
+      document.getElementById('a4').innerText = t.a4;
       document.getElementById('footerText').innerText = t.footerText;
       document.getElementById('linkPrivacy').innerText = t.linkPrivacy;
       document.getElementById('langBtn').innerText = t.btnLang;
